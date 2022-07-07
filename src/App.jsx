@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import axios from "axios";
 
+const appId = process.env.REACT_APP_WEATHER_ID;
+
 function App() {
   const [data, setData] = useState({});
   const [location, setLocation] = useState("");
 
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=imperial&appid=8b056d971d2f50470c192c8d23b58455`;
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=imperial&appid=${appId}`;
 
   const searchLocation = (event) => {
     if (event.key === "Enter") {
